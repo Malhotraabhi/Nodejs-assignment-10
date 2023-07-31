@@ -5,7 +5,7 @@ const postRoute = require("./Routes/route");
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static("uploads"))
 const url =
   "mongodb+srv://abhi22525:BsjlPsAimhxx1NX2@cluster0.xqlhxhh.mongodb.net/instaclone?retryWrites=true&w=majority";
 mongoose

@@ -4,6 +4,7 @@ const postRoute = express.Router();
 const multer = require("multer");
 const path=require('path')
 
+
 postRoute.get("/post", (req, res) => {
   posts
     .find()
@@ -23,7 +24,11 @@ postRoute.get("/post", (req, res) => {
 
 
 const storage = multer.diskStorage({
-  destination: "uploads/",
+  destination: (req, file, cb) => {
+    cb(
+      null,"uploads"
+    );
+  },
   filename: (req, file, cb) => {
     cb(
       null,
